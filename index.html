@@ -3,196 +3,153 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Iman Style - Couture Premium</title>
+
+<title>Iman Style - Couture de Luxe</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
 <style>
-* {margin:0;padding:0;box-sizing:border-box;}
-body {font-family: 'Segoe UI', sans-serif; background:#f4f4f8;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#0f0f0f;color:white;}
 
-/* SIDEBAR */
-.wrapper {display:flex;}
-.sidebar {
-    width:220px;
-    background:#111;
-    color:white;
-    min-height:100vh;
-    position:fixed;
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.9)),
+url('https://via.placeholder.com/1200x800') center/cover;
 }
-.sidebar h2 {text-align:center;padding:20px;border-bottom:1px solid #333;}
-.sidebar a {
-    display:block;
-    padding:15px;
-    color:white;
-    text-decoration:none;
-    transition:0.3s;
+.hero h1{
+font-family:'Playfair Display',serif;
+font-size:50px;
+letter-spacing:2px;
 }
-.sidebar a:hover {background:#333; padding-left:25px;}
+.hero p{margin-top:10px;color:#ccc;}
+.btn{
+margin-top:20px;
+display:inline-block;
+padding:12px 25px;
+border:1px solid gold;
+color:gold;
+text-decoration:none;
+transition:0.3s;
+}
+.btn:hover{background:gold;color:black;}
 
-/* MAIN */
-.main {
-    margin-left:220px;
-    padding:20px;
+/* SECTION */
+.section{padding:80px 20px;text-align:center;}
+.section h2{
+font-family:'Playfair Display',serif;
+margin-bottom:40px;
 }
-
-/* HEADER */
-header {
-    background:white;
-    padding:30px;
-    text-align:center;
-    border-radius:10px;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-header h1 {font-size:30px;}
 
 /* GRID */
-.grid {
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-    margin-top:20px;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
 /* CARD */
-.card {
-    background:white;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
-    transition:0.4s;
-    cursor:pointer;
+.card{
+position:relative;
+overflow:hidden;
 }
-.card img {
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    transition:0.4s;
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+transition:0.5s;
 }
-.card:hover img {transform:scale(1.1);}
-.card:hover {transform:translateY(-10px);}
-.card h3 {padding:15px;}
-.card p {padding:0 15px 15px;color:#555;}
+.card:hover img{transform:scale(1.1);}
+.card .overlay{
+position:absolute;
+bottom:0;
+background:rgba(0,0,0,0.7);
+width:100%;
+padding:15px;
+transform:translateY(100%);
+transition:0.4s;
+}
+.card:hover .overlay{transform:translateY(0);}
 
-/* SECTION */
-.section {margin-top:40px;}
-.section h2 {text-align:center;margin-bottom:20px;}
-
-/* ANIMATION SCROLL */
-.fade {
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-.fade.show {
-    opacity:1;
-    transform:translateY(0);
-}
-
-/* LIGHTBOX */
-.lightbox {
-    position:fixed;
-    top:0;left:0;
-    width:100%;height:100%;
-    background:rgba(0,0,0,0.9);
-    display:none;
-    justify-content:center;
-    align-items:center;
-}
-.lightbox img {
-    max-width:90%;
-    max-height:80%;
-}
+/* ANIMATION */
+.fade{opacity:0;transform:translateY(40px);transition:1s;}
+.show{opacity:1;transform:translateY(0);}
 
 /* WHATSAPP */
-.whatsapp {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:18px;
-    border-radius:50%;
-    font-size:22px;
-    text-decoration:none;
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-    .sidebar {position:relative;width:100%;height:auto;}
-    .main {margin-left:0;}
-}
+/* FOOTER */
+footer{text-align:center;padding:20px;background:#000;color:#aaa;}
 </style>
 </head>
 
 <body>
 
-<div class="sidebar">
-<h2>Iman Style</h2>
-<a href="#">Accueil</a>
-<a href="#services">Services</a>
-<a href="#galerie">Galerie</a>
-<a href="#contact">Contact</a>
-</div>
-
-<div class="main">
-
-<header class="fade">
+<!-- HERO -->
+<section class="hero fade">
+<div>
 <h1>Iman Style</h1>
-<p>Votre élégance, notre passion - Lubumbashi</p>
-</header>
+<p>La couture qui révèle votre élégance</p>
+<a href="https://wa.me/243XXXXXXXXX?text=Bonjour%20Iman%20Style" class="btn">Commander</a>
+</div>
+</section>
 
-<section id="services" class="section fade">
+<!-- SERVICES -->
+<section class="section fade">
 <h2>Nos Services</h2>
 <div class="grid">
-<div class="card"><img src="https://via.placeholder.com/400x300"><h3>Couture sur mesure</h3><p>Création personnalisée.</p></div>
-<div class="card"><img src="https://via.placeholder.com/400x300"><h3>Retouches</h3><p>Ajustement parfait.</p></div>
-<div class="card"><img src="https://via.placeholder.com/400x300"><h3>Mariage</h3><p>Tenues élégantes.</p></div>
+<div class="card"><img src="https://via.placeholder.com/400"><div class="overlay">Couture sur mesure</div></div>
+<div class="card"><img src="https://via.placeholder.com/400"><div class="overlay">Retouches</div></div>
+<div class="card"><img src="https://via.placeholder.com/400"><div class="overlay">Tenues mariage</div></div>
 </div>
 </section>
 
-<section id="galerie" class="section fade">
-<h2>Galerie</h2>
+<!-- GALERIE -->
+<section class="section fade">
+<h2>Nos Créations</h2>
 <div class="grid">
-<img src="https://via.placeholder.com/400x300" onclick="openImg(this)">
-<img src="https://via.placeholder.com/400x300" onclick="openImg(this)">
-<img src="https://via.placeholder.com/400x300" onclick="openImg(this)">
+<div class="card"><img src="https://via.placeholder.com/400"><div class="overlay">Design 1</div></div>
+<div class="card"><img src="https://via.placeholder.com/400"><div class="overlay">Design 2</div></div>
+<div class="card"><img src="https://via.placeholder.com/400"><div class="overlay">Design 3</div></div>
 </div>
 </section>
 
-<section id="contact" class="section fade">
+<!-- CONTACT -->
+<section class="section fade">
 <h2>Contact</h2>
-<p>📍 Lubumbashi</p>
-<p><a href="https://wa.me/243XXXXXXXXX?text=Bonjour%20Iman%20Style">WhatsApp</a></p>
+<p>Lubumbashi</p>
+<p><a href="https://wa.me/243XXXXXXXXX?text=Bonjour%20Iman%20Style" style="color:gold;">WhatsApp</a></p>
 </section>
 
-</div>
+<footer>
+<p>© Iman Style - Couture Premium</p>
+</footer>
 
-<div class="lightbox" onclick="closeImg()" id="lightbox">
-<img id="lightbox-img">
-</div>
-
-<a class="whatsapp" href="https://wa.me/243XXXXXXXXX?text=Bonjour%20Iman%20Style">💬</a>
+<a class="whatsapp" href="https://wa.me/243XXXXXXXXX?text=Bonjour%20Iman%20Style%2C%20je%20souhaite%20commander%20une%20tenue.?text=Bonjour%20Iman%20Style">💬</a>
 
 <script>
-// SCROLL ANIMATION
-let elements = document.querySelectorAll('.fade');
-window.addEventListener('scroll', () => {
-    elements.forEach(el => {
-        let top = el.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            el.classList.add('show');
-        }
-    });
+let elements=document.querySelectorAll('.fade');
+window.addEventListener('scroll',()=>{
+elements.forEach(el=>{
+let top=el.getBoundingClientRect().top;
+if(top<window.innerHeight-100){el.classList.add('show');}
 });
-
-// LIGHTBOX
-function openImg(img){
-    document.getElementById("lightbox").style.display="flex";
-    document.getElementById("lightbox-img").src = img.src;
-}
-function closeImg(){
-    document.getElementById("lightbox").style.display="none";
-}
+});
 </script>
 
 </body>
-</html>
+</html>https
